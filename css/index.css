@@ -1,0 +1,13 @@
+
+.context {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin-top: 5.5vh;
+}
+
+
+
+footer {
+    margin-top: 65vh;
+}
