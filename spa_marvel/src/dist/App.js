@@ -12,6 +12,7 @@ function App() {
     return (react_1["default"].createElement("div", { className: "m-auto antialiased font-sans text-center bg-black text-white" },
         react_1["default"].createElement(Hero_1["default"], null),
         react_1["default"].createElement(NavBar_1["default"], null),
+        react_1["default"].createElement(Carousel_1["default"], null),
         react_1["default"].createElement(Carousel_1["default"], null)));
 }
 exports["default"] = App;

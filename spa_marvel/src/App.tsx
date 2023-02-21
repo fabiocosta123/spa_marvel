@@ -16,6 +16,7 @@ function App() {
       <Hero />
       <NavBar />
       <Carousel />
+      <Carousel />
     </div>
   );
 }
