@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import axios from "axios";
 import md5 from "md5"
 
 //components
@@ -12,7 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-
+ //const baseURL = "https://gateway.marvel.com:443/v1/public";
  const ts = Number(new Date());
  const privateKey = "e404de82f7e2c4f95f89fdeb323754129fbc6228";
  const publicKey = "1958ce7ec28d260a9708f4547727812a";
@@ -20,27 +21,18 @@ import "slick-carousel/slick/slick-theme.css";
 
  //(`https://gateway.marvel.com/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`);
       
-function App() {
-
-  const [comics, setComics] = useState()
+const App: React.FC = () => {
 
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`);  
-      const data = await response.json();                                                
-      setComics(data);
-     
-    }
-
-    fetchData();
-  }, []);
-
-   useEffect(() =>{
-    comics && console.log(comics);
-   }, [comics])
+    axios.get(`https://gateway.marvel.com:443/v1/public/comics?ts=${ts}&apikey=${publicKey}&hash=${hash}`)
+    .then(response => console.log(response))
+    .catch(err => console.log(err));
+  },[]);
+  
+  
   return (
     <div className="m-auto antialiased font-sans text-center bg-black text-white">
-      <Hero />
+      <Hero/>
       <NavBar />
       <Carousel />
       <Carousel />

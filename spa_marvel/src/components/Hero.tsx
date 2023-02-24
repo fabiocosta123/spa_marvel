@@ -8,12 +8,12 @@ import placeholder from "../img/wallpaper.jpg"
 
 import "./Hero.css";
 
-const Hero = ({title = "Comics Marvel", score = 10}) => {
+const Hero = ({thumbnail = placeholder, title = "Comics" , score = 10}) => {
     
     return (
         <div>
             <header className="box-border relative min-h-screen -mb-64">
-               <img className="object-cover object-center h-auto w-full" src= {placeholder} alt="Marvel wallpaper"/>
+               <img className="object-cover object-center h-auto w-full" src= {thumbnail} alt="Marvel wallpaper"/>
 
                 <div className="absolute left-0 bottom-0 w-full h-full bg-gradient-to-b from-transparent to-black"></div>
                 <article className="absolute bottom-0 mb-64 px-8">
